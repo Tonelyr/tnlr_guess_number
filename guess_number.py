@@ -1,24 +1,18 @@
-# Guess the number app
+import random as r
 
-import random
-from random import seed
-from random import randint
+random_number = r.randint(1, 20)
+print("I'm thinking of a number between 1 and 20.")
 
-random.seed(1) 
+guess = -1
 
-for number in range(1): 
-    random_number = random.randint(0,20)
-    #print(random_number)
+while guess != random_number:
+    guess = input("Guess the number: ")
+    guess = int(guess)
 
-user_guess = print(input("Guess the number: "))
-
-while user_guess != random_number:
-    print(input("Wrong number, try again: "))
-
-if input == random_number:
-    print("You guessed the number !")
-
-
-
-
-
+    if guess > random_number:
+        print("Too high, try again")
+    elif guess < random_number:
+        print("Too low, try again")
+    else:
+        print("You guessed !")
+print("Bip boup, shutting down...")
